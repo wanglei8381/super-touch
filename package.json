@@ -1,22 +1,21 @@
 {
   "name": "super-touch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "提供触摸事件的基础能力",
   "license": "MIT",
   "main": "index.js",
   "author": "wanglei",
   "keywords": [
-    "super-event",
+    "super-touch",
     "event",
-    "touch",
-    "super-touch"
+    "touch"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:wanglei8381/super-event.git"
+    "url": "git@github.com:wanglei8381/super-touch.git"
   },
   "bugs": {
-    "url": "https://github.com/wanglei8381/super-event/issues"
+    "url": "https://github.com/wanglei8381/super-touch/issues"
   },
   "dependencies": {
     "super-event": "^0.0.1",

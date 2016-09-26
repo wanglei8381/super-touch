@@ -44,6 +44,8 @@ Touch.prototype.touchStart = function (e) {
     this.x1 = touch.pageX;
     this.y1 = touch.pageY;
     this.trigger('touch:start', {
+        x1: this.x1,
+        y1: this.y1,
         e: e,
         el: this.touch.el,
         timestamp: this.lastTimestamp
@@ -71,7 +73,6 @@ Touch.prototype.touchMove = function (e) {
         e: e,
         toUp: yrange > 0,
         toLeft: xrange > 0,
-        dir: swipeDirection(this.x1, this.x2, this.y1, this.y2),
         xrange: xrange,
         yrange: yrange,
         spend: this.spend
@@ -98,6 +99,7 @@ Touch.prototype.touchCancel = function () {
         y1: this.y1,
         x2: this.x2,
         y2: this.y2,
+        dir: swipeDirection(this.x1, this.x2, this.y1, this.y2),
         spend: this.spend
     });
     this.spend = 0;
@@ -108,9 +110,9 @@ Touch.prototype.touchCancel = function () {
 Touch.prototype.start = function () {
     this._add();
 
-    window.addEventListener('scroll', () => {
-        this.touchCancel();
-        this.trigger('scroll');
+    window.addEventListener('scroll', (e) => {
+        // this.touchCancel();
+        this.trigger('scroll', e);
     }, false);
 
     //重新绑定dom
