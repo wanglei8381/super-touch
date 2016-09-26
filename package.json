@@ -19,6 +19,7 @@
     "url": "https://github.com/wanglei8381/super-event/issues"
   },
   "dependencies": {
-    "super-event": "^0.0.1"
+    "super-event": "^0.0.1",
+    "dom-event-helper": "^0.0.1"
   }
 }
