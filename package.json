@@ -1,6 +1,6 @@
 {
   "name": "super-touch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "提供触摸事件的基础能力",
   "license": "MIT",
   "main": "index.js",

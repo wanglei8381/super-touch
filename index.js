@@ -109,17 +109,17 @@ Touch.prototype.touchCancel = function () {
 
 Touch.prototype.start = function () {
     this._add();
-
-    window.addEventListener('scroll', (e) => {
+    var _this = this;
+    window.addEventListener('scroll', function (e) {
         // this.touchCancel();
-        this.trigger('scroll', e);
+        _this.trigger('scroll', e);
     }, false);
 
     //重新绑定dom
-    this.on('touch:el', (el) => {
-        this._remove();
-        this.el = el;
-        this._add();
+    this.on('touch:el', function (e) {
+        _this._remove();
+        _this.el = el;
+        _this._add();
     });
 };
 
