@@ -37,12 +37,9 @@ Touch.prototype.touchStart = function (e) {
     this.touch = touch;
     this.touch.el = 'tagName' in touch.target ?
         touch.target : touch.target.parentNode;
-    // if (e.touches && e.touches.length === 1 && this.x2) {
-    //     this.x2 = this.y2 = undefined;
-    // }
 
-    this.x1 = touch.pageX;
-    this.y1 = touch.pageY;
+    this.x2 = this.x1 = touch.pageX;
+    this.y2 = this.y1 = touch.pageY;
     this.trigger('touch:start', {
         x1: this.x1,
         y1: this.y1,
