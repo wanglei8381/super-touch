@@ -107,7 +107,8 @@ Touch.prototype.touchCancel = function () {
 Touch.prototype.start = function () {
     this._add();
     var _this = this;
-    window.addEventListener('scroll', function (e) {
+
+    domEventHelper.add(window, 'scroll', function (e) {
         // this.touchCancel();
         _this.trigger('scroll', e);
     }, false);
@@ -119,6 +120,11 @@ Touch.prototype.start = function () {
         _this._add();
     });
 };
+
+Touch.prototype.destroy = function () {
+    this._remove();
+    domEventHelper.remove(window);
+}
 
 function swipeDirection(x1, x2, y1, y2) {
     return Math.abs(x1 - x2) >=
