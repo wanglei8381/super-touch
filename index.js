@@ -113,7 +113,7 @@ Touch.prototype.start = function () {
         _this.trigger('scroll', e);
     }, false);
 
-    //重新绑定dom
+    // 重新绑定dom
     this.on('touch:el', function (e) {
         _this._remove();
         _this.el = el;
